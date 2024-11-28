@@ -90,3 +90,20 @@ muteButton.addEventListener('click', function() {
 volumeSlider.addEventListener('input', function() {
     audio.volume = volumeSlider.value;
 });
+
+fetch('Jackhamer.pythonanywhere.com', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ message: userInput })
+})
+.then(response => response.json())
+.then(data => {
+    const botReply = data.reply;
+    appendMessage('bot', botReply);
+})
+.catch(error => {
+    console.error('Error:', error);
+    appendMessage('bot', "Sorry, something went wrong. Please try again.");
+});
