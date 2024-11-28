@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="/static/The Legend of Zelda Tears of The Kingdom OST - Main Theme (FULL VER.).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+<!-- Controls for background music -->
+<div class="audio-controls">
+    <button id="playPauseButton">Play</button>
+    <button id="muteButton">Mute</button>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+</div>
+    <div class="chat-container">
+        <div id="conversationBox">
+            <div class="message bot">
+                Welcome! I'm a chatbot that can provide information about video games.<br>
+                For now, you can only ask me questions about video game release dates.<br>
+                <b>Syntax:</b> "When was [Game Name] released?"<br>
+                Example: "When was Cyberpunk 2077 released?"<br>
+                <i>The timezone is based on Vietnam (UTC+7).</i>
+            </div>
+        </div>
+        
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Type your message here..." />
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
